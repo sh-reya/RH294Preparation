@@ -1,0 +1,13 @@
+- hosts: node1
+  vars:
+    pack:
+      - net-tools
+      - python3
+      - firefox
+      - vsftpd
+  tasks:
+    - name: Installing packages
+      yum:
+        name: "{{pack}}"
+        state: present
+    
